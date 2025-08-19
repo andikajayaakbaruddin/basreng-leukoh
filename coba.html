@@ -1,0 +1,2677 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basreng Leukoh - Basreng Renyah, Pedasnya Bikin Nagih!</title>
+    <meta
+      name="description"
+      content="Basreng Leukoh - UMKM makanan ringan basreng terenak dengan cita rasa pedas yang bikin nagih. Pesan sekarang!"
+    />
+    <meta
+      name="keywords"
+      content="basreng, makanan ringan, pedas, UMKM, basreng leukoh"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+    <script>
+      tailwind.config = {
+        darkMode: "selector",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#dc2626", // red-600
+              secondary: "#fbbf24", // amber-400
+              dark: "#1f2937", // gray-800
+            },
+            fontFamily: {
+              brand: ["Arial", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .dropdown-open {
+        transform: rotate(180deg);
+      }
+      .fade-in {
+        animation: fadeIn 0.3s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+    <style>
+      .hero-bg {
+        background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+      }
+
+      .card-hover {
+        transition: all 0.3s ease;
+      }
+
+      .card-hover:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+
+      .navbar-blur {
+        backdrop-filter: blur(10px);
+        background-color: rgba(255, 255, 255, 0.9);
+      }
+
+      .dark .navbar-blur {
+        background-color: rgba(31, 41, 55, 0.9);
+      }
+
+      .floating-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+      }
+
+      .gallery-item {
+        transition: all 0.3s ease;
+        overflow: hidden;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.1);
+      }
+
+      .testimonial-card {
+        min-height: 200px;
+      }
+
+      .dark {
+        background-color: #111827;
+        color: #f9fafb;
+      }
+
+      .section-padding {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+      }
+    </style>
+  </head>
+
+  <body class="transition-colors duration-300">
+    <!-- Navbar -->
+    <nav
+      id="navbar"
+      class="fixed top-0 w-full z-50 transition-all duration-300 navbar-blur"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex-shrink-0">
+            <h1 class="text-2xl font-bold text-primary">BASRENG LEUKOH</h1>
+          </div>
+
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-4">
+              <a
+                href="#home"
+                class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:text-primary transition-colors"
+                >Beranda</a
+              >
+              <a
+                href="#location"
+                class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:text-primary transition-colors"
+                >Lokasi</a
+              >
+              <a
+                href="#about"
+                class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:text-primary transition-colors"
+                >Tentang</a
+              >
+              <a
+                href="#franchise"
+                class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:text-primary transition-colors"
+                >Franchise</a
+              >
+              <a
+                href="#gallery"
+                class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:text-primary transition-colors"
+                >Galeri</a
+              >
+              <a
+                href="#contact"
+                class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:text-primary transition-colors"
+                >Kontak</a
+              >
+            </div>
+          </div>
+
+          <div class="flex items-center space-x-4">
+            <button
+              id="darkModeToggle"
+              class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+            >
+              <i class="fas fa-moon dark:hidden"></i>
+              <i class="fas fa-sun hidden dark:inline-block"></i>
+            </button>
+
+            <button id="mobileMenuBtn" class="md:hidden">
+              <i class="fas fa-bars text-xl"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="hidden md:hidden">
+        <div
+          class="px-2 pt-2 pb-3 space-y-1 bg-white dark:bg-gray-800 shadow-lg"
+        >
+          <a
+            href="#home"
+            class="block px-3 py-2 text-sm font-medium hover:text-primary transition-colors"
+            >Beranda</a
+          >
+          <a
+            href="#location"
+            class="block px-3 py-2 text-sm font-medium hover:text-primary transition-colors"
+            >Lokasi</a
+          >
+          <a
+            href="#about"
+            class="block px-3 py-2 text-sm font-medium hover:text-primary transition-colors"
+            >Tentang</a
+          >
+          <a
+            href="#franchise"
+            class="block px-3 py-2 text-sm font-medium hover:text-primary transition-colors"
+            >Franchise</a
+          >
+          <a
+            href="#gallery"
+            class="block px-3 py-2 text-sm font-medium hover:text-primary transition-colors"
+            >Galeri</a
+          >
+          <a
+            href="#contact"
+            class="block px-3 py-2 text-sm font-medium hover:text-primary transition-colors"
+            >Kontak</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center pt-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="text-white">
+            <h1 class="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              BASRENG<br />
+              <span class="text-secondary">LEUKOH</span>
+            </h1>
+            <p class="text-xl lg:text-2xl mb-8 text-red-100">
+              "Basreng Renyah, Pedasnya Bikin Nagih!"
+            </p>
+            <p class="text-lg mb-8 text-red-100">
+              Nikmati kelezatan basreng dengan bumbu rahasia yang telah teruji
+              sejak 2015. Dijamin bikin ketagihan dengan rasa pedas yang pas di
+              lidah!
+            </p>
+            <button
+              onclick="orderWhatsApp()"
+              class="bg-secondary hover:bg-yellow-500 text-gray-900 font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+            >
+              <i class="fab fa-whatsapp mr-2"></i> Pesan Sekarang
+            </button>
+          </div>
+          <div class="flex justify-center">
+            <div class="bg-white/20 p-8 rounded-3xl backdrop-blur-sm">
+              <div
+                class="w-80 h-80 bg-white/30 rounded-2xl flex items-center justify-center"
+              >
+                <div class="text-center text-white">
+                  <img
+                    id="logo"
+                    src="images/logo.png"
+                    alt="Logo"
+                    class="cursor-pointer transition-transform duration-500"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            const logo = document.getElementById("logo");
+
+            logo.addEventListener("click", () => {
+              logo.classList.add("animate-flip");
+              setTimeout(() => {
+                logo.classList.remove("animate-flip");
+              }, 800); // sesuai durasi animasi
+            });
+          </script>
+
+          <style>
+            /* Flip animation */
+            @keyframes flipAnimation {
+              0% {
+                transform: rotateY(0deg);
+              }
+              50% {
+                transform: rotateY(180deg);
+              }
+              100% {
+                transform: rotateY(360deg);
+              }
+            }
+
+            .animate-flip {
+              animation: flipAnimation 0.8s ease;
+            }
+          </style>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="section-padding bg-gray-50 dark:bg-gray-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            Varian Produk Kami
+          </h2>
+          <p class="text-xl text-gray-600 dark:text-gray-300">
+            Pilih level kepedasan yang sesuai dengan selera Anda!
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="card-hover bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden"
+          >
+            <image
+              src="images/basreng3.jpg"
+              class="w-full h-48 flex items-center justify-center"
+            >
+              <!-- class="h-48 bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center" -->
+              <!-- <i class="fas fa-pepper-hot text-white text-4xl"></i> -->
+            </image>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                Basreng Original
+              </h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">
+                Rasa pedas manis yang pas untuk pemula. Cocok untuk semua
+                kalangan.
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="text-2xl font-bold text-primary">Rp 15.000</span>
+                <button
+                  onclick="orderProduct('Basreng Original', 15000)"
+                  class="bg-primary hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors"
+                >
+                  Pesan
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="card-hover bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden"
+          >
+            <div
+              class="h-48 bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center"
+            >
+              <i class="fas fa-fire text-white text-4xl"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                Basreng Pedas
+              </h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">
+                Level pedas menengah yang bikin ketagihan. Best seller kami!
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="text-2xl font-bold text-primary">Rp 18.000</span>
+                <button
+                  onclick="orderProduct('Basreng Pedas', 18000)"
+                  class="bg-primary hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors"
+                >
+                  Pesan
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="card-hover bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden"
+          >
+            <div
+              class="h-48 bg-gradient-to-br from-red-700 to-red-900 flex items-center justify-center"
+            >
+              <i class="fas fa-skull-crossbones text-white text-4xl"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                Basreng Extra Hot
+              </h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">
+                Tantangan untuk pecinta pedas sejati! Berani coba?
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="text-2xl font-bold text-primary">Rp 20.000</span>
+                <button
+                  onclick="orderProduct('Basreng Extra Hot', 20000)"
+                  class="bg-primary hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors"
+                >
+                  Pesan
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="section-padding">
+      <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <div class="text-center mb-8">
+          <h1 class="text-4xl font-bold text-gray-800 dark:text-white mb-2">
+            🏪 Cari Lokasi Outlet
+          </h1>
+          <p class="text-gray-600 dark:text-gray-300">
+            Pilih wilayah untuk melihat outlet terdekat dan lokasinya
+          </p>
+        </div>
+
+        <div class="max-w-6xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Left Panel - Dropdowns -->
+            <div
+              class="card-hover bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6"
+            >
+              <h2
+                class="text-2xl font-semibold text-gray-800 dark:text-white mb-6"
+              >
+                Pilih Lokasi
+              </h2>
+
+              <!-- Dropdown Wilayah -->
+              <div class="mb-6">
+                <label
+                  class="block text-sm font-medium text-gray-700 dark:text-white mb-2"
+                  >Pilih Wilayah</label
+                >
+                <div class="relative">
+                  <button
+                    id="wilayahDropdown"
+                    class="w-full bg-white dark:bg-gray-800 border border-gray-300 rounded-lg px-4 py-3 text-left focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 hover:border-gray-400"
+                  >
+                    <span id="wilayahText" class="text-gray-500 dark:text-white"
+                      >Pilih Wilayah...</span
+                    >
+                    <svg
+                      class="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 transition-transform duration-200"
+                      id="wilayahChevron"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 9l-7 7-7-7"
+                      ></path>
+                    </svg>
+                  </button>
+                  <div
+                    id="wilayahList"
+                    class="hidden absolute z-10 w-full bg-white dark:bg-gray-800 border border-gray-300 rounded-lg mt-1 shadow-lg max-h-60 overflow-y-auto"
+                  >
+                    <!-- Options will be populated by JavaScript -->
+                  </div>
+                </div>
+              </div>
+
+              <!-- Dropdown Outlet -->
+              <div class="mb-6">
+                <label
+                  class="block text-sm font-medium text-gray-700 dark:text-white mb-2"
+                  >Pilih Outlet</label
+                >
+                <div class="relative">
+                  <button
+                    id="outletDropdown"
+                    class="w-full bg-gray-100 dark:bg-gray-800 border border-gray-300 rounded-lg px-4 py-3 text-left cursor-not-allowed"
+                    disabled
+                  >
+                    <span id="outletText" class="text-gray-400"
+                      >Pilih wilayah terlebih dahulu...</span
+                    >
+                    <svg
+                      class="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 9l-7 7-7-7"
+                      ></path>
+                    </svg>
+                  </button>
+                  <div
+                    id="outletList"
+                    class="hidden absolute z-10 w-full bg-white dark:bg-gray-800 border border-gray-300 rounded-lg mt-1 shadow-lg max-h-60 overflow-y-auto"
+                  >
+                    <!-- Options will be populated by JavaScript -->
+                  </div>
+                </div>
+              </div>
+
+              <!-- Info Outlet -->
+              <div
+                id="outletInfo"
+                class="hidden bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-700 dark:to-zink-500 rounded-lg p-4 border border-blue-200"
+              >
+                <h3 class="font-semibold text-gray-800 dark:text-white mb-2">
+                  📍 Informasi Outlet
+                </h3>
+                <div
+                  id="outletDetails"
+                  class="text-sm text-gray-600 dark:text-gray-200 space-y-1"
+                >
+                  <!-- Details will be populated by JavaScript -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Panel - Google Maps -->
+            <div
+              class="card-hover bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6"
+            >
+              <h2
+                class="text-2xl font-semibold text-gray-800 dark:text-white mb-6"
+              >
+                📍 Lokasi di Peta
+              </h2>
+              <div
+                id="mapContainer"
+                class="w-full h-96 bg-gray-100 dark:bg-gray-600 rounded-lg flex items-center justify-center"
+              >
+                <div class="text-center text-gray-500 dark:text-gray-300">
+                  <svg
+                    class="w-16 h-16 mx-auto mb-4 text-gray-300"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    ></path>
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    ></path>
+                  </svg>
+                  <p>Pilih outlet untuk melihat lokasi di peta</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding bg-gray-50 dark:bg-gray-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-6">
+              Tentang Basreng Leukoh
+            </h2>
+            <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
+              Basreng Leukoh didirikan pada tahun 2015 di Singosari, Malang,
+              dengan misi menghadirkan camilan basreng berkualitas tinggi dengan
+              cita rasa khas yang tak terlupakan.
+            </p>
+            <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+              Dengan resep turun-temurun dan bahan-bahan pilihan, kami
+              berkomitmen memberikan pengalaman kuliner terbaik bagi setiap
+              pelanggan.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="text-center p-4 bg-white dark:bg-gray-800 rounded-lg">
+                <i class="fas fa-award text-3xl text-primary mb-2"></i>
+                <h4 class="font-bold text-gray-900 dark:text-white">
+                  Kualitas Terjamin
+                </h4>
+                <p class="text-sm text-gray-600 dark:text-gray-300">
+                  Bahan berkualitas tinggi
+                </p>
+              </div>
+              <div class="text-center p-4 bg-white dark:bg-gray-800 rounded-lg">
+                <i class="fas fa-heart text-3xl text-primary mb-2"></i>
+                <h4 class="font-bold text-gray-900 dark:text-white">
+                  Resep Rahasia
+                </h4>
+                <p class="text-sm text-gray-600 dark:text-gray-300">
+                  Turun-temurun keluarga
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-xl">
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+              Visi & Misi
+            </h3>
+
+            <div class="space-y-6">
+              <div>
+                <h4 class="text-lg font-semibold text-primary mb-2">VISI</h4>
+                <p class="text-gray-600 dark:text-gray-300">
+                  Menjadi brand basreng terdepan di Indonesia yang dikenal
+                  dengan cita rasa autentik dan kualitas premium.
+                </p>
+              </div>
+
+              <div>
+                <h4 class="text-lg font-semibold text-primary mb-2">MISI</h4>
+                <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+                  <li>• Menghadirkan produk basreng berkualitas tinggi</li>
+                  <li>• Mempertahankan cita rasa autentik Indonesia</li>
+                  <li>• Memberikan pelayanan terbaik kepada pelanggan</li>
+                  <li>• Mengembangkan kemitraan usaha yang menguntungkan</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Franchise Section -->
+    <section id="franchise" class="section-padding">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            Peluang Franchise
+          </h2>
+          <p class="text-xl text-gray-600 dark:text-gray-300">
+            Bergabunglah dengan kesuksesan Basreng Leukoh!
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div
+            class="card-hover bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg"
+          >
+            <div class="text-center mb-6">
+              <i class="fas fa-store text-4xl text-primary mb-4"></i>
+              <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
+                Paket Starter
+              </h3>
+              <div class="text-3xl font-bold text-primary mt-2">Rp 25 Juta</div>
+            </div>
+
+            <ul class="space-y-3 text-gray-600 dark:text-gray-300 mb-6">
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2"></i> Peralatan
+                produksi dasar
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2"></i> Resep & formula
+                rahasia
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2"></i> Training 3 hari
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2"></i> Support
+                marketing awal
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2"></i> Sertifikat
+                franchise
+              </li>
+            </ul>
+
+            <button
+              onclick="franchiseInquiry('Starter')"
+              class="w-full bg-primary hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+            >
+              Pilih Paket Starter
+            </button>
+          </div>
+
+          <div
+            class="card-hover bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border-2 border-primary"
+          >
+            <div class="text-center mb-6">
+              <div
+                class="bg-primary text-white text-xs font-bold px-3 py-1 rounded-full mb-4 inline-block"
+              >
+                TERPOPULER
+              </div>
+              <i class="fas fa-crown text-4xl text-secondary mb-4"></i>
+              <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
+                Paket Premium
+              </h3>
+              <div class="text-3xl font-bold text-primary mt-2">Rp 45 Juta</div>
+            </div>
+
+            <ul class="space-y-3 text-gray-600 dark:text-gray-300 mb-6">
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2"></i> Semua fasilitas
+                Starter
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2"></i> Peralatan
+                produksi lengkap
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2"></i> Booth/gerobak
+                eksklusif
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2"></i> Training 7 hari
+                intensif
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2"></i> Support
+                marketing 6 bulan
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2"></i> Jaminan area
+                eksklusif
+              </li>
+            </ul>
+
+            <button
+              onclick="franchiseInquiry('Premium')"
+              class="w-full bg-secondary hover:bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-lg transition-colors"
+            >
+              Pilih Paket Premium
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section-padding bg-gray-50 dark:bg-gray-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            Galeri
+          </h2>
+          <p class="text-xl text-gray-600 dark:text-gray-300">
+            Lihat foto-foto produk dan aktivitas kami
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div
+            class="gallery-item aspect-square bg-gradient-to-br from-red-400 to-red-600 rounded-lg overflow-hidden cursor-pointer"
+          >
+            <img
+              class="w-full h-full object-cover transition-transform duration-300"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23dc2626'/%3E%3Ctext x='50' y='55' font-size='30' text-patokan='middle' fill='white'%3E🌶️%3C/text%3E%3C/svg%3E"
+              alt="Produk Basreng"
+            />
+          </div>
+          <div
+            class="gallery-item aspect-square bg-gradient-to-br from-orange-400 to-red-500 rounded-lg overflow-hidden cursor-pointer"
+          >
+            <img
+              class="w-full h-full object-cover transition-transform duration-300"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23ea580c'/%3E%3Ctext x='50' y='55' font-size='30' text-patokan='middle' fill='white'%3E🏪%3C/text%3E%3C/svg%3E"
+              alt="Toko Basreng"
+            />
+          </div>
+          <div
+            class="gallery-item aspect-square bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg overflow-hidden cursor-pointer"
+          >
+            <img
+              class="w-full h-full object-cover transition-transform duration-300"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23f59e0b'/%3E%3Ctext x='50' y='55' font-size='30' text-patokan='middle' fill='white'%3E👨‍🍳%3C/text%3E%3C/svg%3E"
+              alt="Proses Pembuatan"
+            />
+          </div>
+          <div
+            class="gallery-item aspect-square bg-gradient-to-br from-red-500 to-red-700 rounded-lg overflow-hidden cursor-pointer"
+          >
+            <img
+              class="w-full h-full object-cover transition-transform duration-300"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23b91c1c'/%3E%3Ctext x='50' y='55' font-size='30' text-patokan='middle' fill='white'%3E📦%3C/text%3E%3C/svg%3E"
+              alt="Packaging"
+            />
+          </div>
+          <div
+            class="gallery-item aspect-square bg-gradient-to-br from-purple-400 to-red-500 rounded-lg overflow-hidden cursor-pointer"
+          >
+            <img
+              class="w-full h-full object-cover transition-transform duration-300"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23a855f7'/%3E%3Ctext x='50' y='55' font-size='30' text-patokan='middle' fill='white'%3E🎉%3C/text%3E%3C/svg%3E"
+              alt="Event"
+            />
+          </div>
+          <div
+            class="gallery-item aspect-square bg-gradient-to-br from-green-400 to-red-500 rounded-lg overflow-hidden cursor-pointer"
+          >
+            <img
+              class="w-full h-full object-cover transition-transform duration-300"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2310b981'/%3E%3Ctext x='50' y='55' font-size='30' text-patokan='middle' fill='white'%3E🤝%3C/text%3E%3C/svg%3E"
+              alt="Partnership"
+            />
+          </div>
+          <div
+            class="gallery-item aspect-square bg-gradient-to-br from-blue-400 to-red-500 rounded-lg overflow-hidden cursor-pointer"
+          >
+            <img
+              class="w-full h-full object-cover transition-transform duration-300"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%233b82f6'/%3E%3Ctext x='50' y='55' font-size='30' text-patokan='middle' fill='white'%3E⭐%3C/text%3E%3C/svg%3E"
+              alt="Awards"
+            />
+          </div>
+          <div
+            class="gallery-item aspect-square bg-gradient-to-br from-pink-400 to-red-500 rounded-lg overflow-hidden cursor-pointer"
+          >
+            <img
+              class="w-full h-full object-cover transition-transform duration-300"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23ec4899'/%3E%3Ctext x='50' y='55' font-size='30' text-patokan='middle' fill='white'%3E👥%3C/text%3E%3C/svg%3E"
+              alt="Team"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section-padding">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            Testimoni Pelanggan
+          </h2>
+          <p class="text-xl text-gray-600 dark:text-gray-300">
+            Apa kata mereka tentang Basreng Leukoh?
+          </p>
+        </div>
+
+        <div class="relative">
+          <div id="testimonialSlider" class="overflow-hidden">
+            <div
+              class="flex transition-transform duration-500 ease-in-out"
+              id="testimonialTrack"
+            >
+              <div class="w-full flex-shrink-0 px-4">
+                <div
+                  class="testimonial-card bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg mx-auto max-w-2xl"
+                >
+                  <div class="text-center">
+                    <div class="flex justify-center mb-4">
+                      <i class="fas fa-star text-secondary"></i>
+                      <i class="fas fa-star text-secondary"></i>
+                      <i class="fas fa-star text-secondary"></i>
+                      <i class="fas fa-star text-secondary"></i>
+                      <i class="fas fa-star text-secondary"></i>
+                    </div>
+                    <p
+                      class="text-lg text-gray-600 dark:text-gray-300 mb-6 italic"
+                    >
+                      "Basreng Leukoh ini benar-benar bikin nagih! Pedasnya pas
+                      banget, ga terlalu pedas tapi tetap berasa. Sudah jadi
+                      camilan wajib keluarga kami."
+                    </p>
+                    <div
+                      class="w-16 h-16 bg-gradient-to-br from-pink-400 to-red-500 rounded-full mx-auto mb-4 flex items-center justify-center"
+                    >
+                      <i class="fas fa-user text-white text-xl"></i>
+                    </div>
+                    <h4 class="font-bold text-gray-900 dark:text-white">
+                      Sari Wulandari
+                    </h4>
+                    <p class="text-gray-500 dark:text-gray-400">
+                      Ibu Rumah Tangga
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="w-full flex-shrink-0 px-4">
+                <div
+                  class="testimonial-card bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg mx-auto max-w-2xl"
+                >
+                  <div class="text-center">
+                    <div class="flex justify-center mb-4">
+                      <i class="fas fa-star text-secondary"></i>
+                      <i class="fas fa-star text-secondary"></i>
+                      <i class="fas fa-star text-secondary"></i>
+                      <i class="fas fa-star text-secondary"></i>
+                      <i class="fas fa-star text-secondary"></i>
+                    </div>
+                    <p
+                      class="text-lg text-gray-600 dark:text-gray-300 mb-6 italic"
+                    >
+                      "Sebagai mahasiswa, Basreng Leukoh jadi teman setia
+                      begadang. Harganya terjangkau, rasanya enak, dan bikin
+                      kenyang. Recommended banget!"
+                    </p>
+                    <div
+                      class="w-16 h-16 bg-gradient-to-br from-blue-400 to-red-500 rounded-full mx-auto mb-4 flex items-center justify-center"
+                    >
+                      <i class="fas fa-user text-white text-xl"></i>
+                    </div>
+                    <h4 class="font-bold text-gray-900 dark:text-white">
+                      Ahmad Rizky
+                    </h4>
+                    <p class="text-gray-500 dark:text-gray-400">Mahasiswa UB</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="w-full flex-shrink-0 px-4">
+                <div
+                  class="testimonial-card bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg mx-auto max-w-2xl"
+                >
+                  <div class="text-center">
+                    <div class="flex justify-center mb-4">
+                      <i class="fas fa-star text-secondary"></i>
+                      <i class="fas fa-star text-secondary"></i>
+                      <i class="fas fa-star text-secondary"></i>
+                      <i class="fas fa-star text-secondary"></i>
+                      <i class="fas fa-star text-secondary"></i>
+                    </div>
+                    <p
+                      class="text-lg text-gray-600 dark:text-gray-300 mb-6 italic"
+                    >
+                      "Franchisenya sangat menguntungkan! Support dari tim
+                      Basreng Leukoh sangat membantu. Dalam 6 bulan sudah balik
+                      modal."
+                    </p>
+                    <div
+                      class="w-16 h-16 bg-gradient-to-br from-green-400 to-red-500 rounded-full mx-auto mb-4 flex items-center justify-center"
+                    >
+                      <i class="fas fa-user text-white text-xl"></i>
+                    </div>
+                    <h4 class="font-bold text-gray-900 dark:text-white">
+                      Budi Santoso
+                    </h4>
+                    <p class="text-gray-500 dark:text-gray-400">
+                      Mitra Franchise
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button
+            onclick="prevTestimonial()"
+            class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white dark:bg-gray-800 shadow-lg rounded-full p-3 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+          >
+            <i class="fas fa-chevron-left text-primary"></i>
+          </button>
+          <button
+            onclick="nextTestimonial()"
+            class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white dark:bg-gray-800 shadow-lg rounded-full p-3 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+          >
+            <i class="fas fa-chevron-right text-primary"></i>
+          </button>
+
+          <div class="flex justify-center mt-8 space-x-2">
+            <button
+              onclick="goToTestimonial(0)"
+              class="w-3 h-3 rounded-full bg-primary testimonial-dot"
+            ></button>
+            <button
+              onclick="goToTestimonial(1)"
+              class="w-3 h-3 rounded-full bg-gray-300 testimonial-dot"
+            ></button>
+            <button
+              onclick="goToTestimonial(2)"
+              class="w-3 h-3 rounded-full bg-gray-300 testimonial-dot"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section-padding bg-gray-50 dark:bg-gray-900">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            FAQ
+          </h2>
+          <p class="text-xl text-gray-600 dark:text-gray-300">
+            Pertanyaan yang sering ditanyakan
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <div class="faq-item bg-white dark:bg-gray-800 rounded-lg shadow-sm">
+            <button
+              class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+              onclick="toggleFAQ(0)"
+            >
+              <span class="font-semibold text-gray-900 dark:text-white"
+                >Berapa lama daya tahan produk Basreng Leukoh?</span
+              >
+              <i
+                class="fas fa-chevron-down transform transition-transform faq-icon"
+              ></i>
+            </button>
+            <div class="faq-content hidden px-6 pb-4">
+              <p class="text-gray-600 dark:text-gray-300">
+                Basreng Leukoh memiliki daya tahan hingga 6 bulan jika disimpan
+                dalam kemasan tertutup rapat dan tempat yang kering.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item bg-white dark:bg-gray-800 rounded-lg shadow-sm">
+            <button
+              class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+              onclick="toggleFAQ(1)"
+            >
+              <span class="font-semibold text-gray-900 dark:text-white"
+                >Apakah ada pengiriman ke luar kota?</span
+              >
+              <i
+                class="fas fa-chevron-down transform transition-transform faq-icon"
+              ></i>
+            </button>
+            <div class="faq-content hidden px-6 pb-4">
+              <p class="text-gray-600 dark:text-gray-300">
+                Ya, kami melayani pengiriman ke seluruh Indonesia melalui JNE,
+                J&T, dan SiCepat. Minimal pemesanan untuk luar kota adalah 10
+                bungkus.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item bg-white dark:bg-gray-800 rounded-lg shadow-sm">
+            <button
+              class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+              onclick="toggleFAQ(2)"
+            >
+              <span class="font-semibold text-gray-900 dark:text-white"
+                >Bagaimana cara bergabung menjadi mitra franchise?</span
+              >
+              <i
+                class="fas fa-chevron-down transform transition-transform faq-icon"
+              ></i>
+            </button>
+            <div class="faq-content hidden px-6 pb-4">
+              <p class="text-gray-600 dark:text-gray-300">
+                Anda bisa menghubungi kami melalui WhatsApp atau mengisi form di
+                section franchise. Tim kami akan menjelaskan prosedur dan
+                persyaratan yang diperlukan.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item bg-white dark:bg-gray-800 rounded-lg shadow-sm">
+            <button
+              class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+              onclick="toggleFAQ(3)"
+            >
+              <span class="font-semibold text-gray-900 dark:text-white"
+                >Apakah basreng halal?</span
+              >
+              <i
+                class="fas fa-chevron-down transform transition-transform faq-icon"
+              ></i>
+            </button>
+            <div class="faq-content hidden px-6 pb-4">
+              <p class="text-gray-600 dark:text-gray-300">
+                Ya, semua produk Basreng Leukoh sudah bersertifikat halal MUI
+                dan diproduksi dengan standar kebersihan yang ketat.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            Hubungi Kami
+          </h2>
+          <p class="text-xl text-gray-600 dark:text-gray-300">
+            Jangan ragu untuk menghubungi kami!
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div>
+            <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg">
+              <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                Kirim Pesan
+              </h3>
+              <form class="space-y-6" onsubmit="submitContact(event)">
+                <div>
+                  <label
+                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    >Nama Lengkap</label
+                  >
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors"
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    >Email</label
+                  >
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors"
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    >Pesan</label
+                  >
+                  <textarea
+                    name="message"
+                    rows="4"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-700 dark:text-white transition-colors"
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  class="w-full bg-primary hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+                >
+                  Kirim Pesan
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <div class="space-y-6">
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mr-4"
+                >
+                  <i class="fab fa-whatsapp text-white text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 dark:text-white">
+                    WhatsApp
+                  </h4>
+                  <p class="text-gray-600 dark:text-gray-300">
+                    +62 812-3456-7890
+                  </p>
+                </div>
+              </div>
+              <button
+                onclick="orderWhatsApp()"
+                class="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors"
+              >
+                Chat Sekarang
+              </button>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center mr-4"
+                >
+                  <i class="fab fa-instagram text-white text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 dark:text-white">
+                    Instagram
+                  </h4>
+                  <p class="text-gray-600 dark:text-gray-300">
+                    @basreng.leukoh
+                  </p>
+                </div>
+              </div>
+              <a
+                href="https://www.instagram.com/basrengluekoh_bykingabdi/#"
+                target="_blank"
+                class="w-full block text-center bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors"
+              >
+                Follow Instagram
+              </a>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center mr-4"
+                >
+                  <i class="fab fa-tiktok text-white text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 dark:text-white">
+                    Tiktok
+                  </h4>
+                  <p class="text-gray-600 dark:text-gray-300">
+                    Basreng Leukoh Official
+                  </p>
+                </div>
+              </div>
+              <a
+                href="https://www.tiktok.com/@basrengluekoh_kingabdi"
+                target="_blank"
+                class="w-full block text-center bg-gray-900 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors"
+              >
+                Follow TikTok
+              </a>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+              <div class="flex items-center">
+                <div
+                  class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center mr-4"
+                >
+                  <i class="fas fa-envelope text-white text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 dark:text-white">
+                    Email
+                  </h4>
+                  <p class="text-gray-600 dark:text-gray-300">
+                    info@basrengleukoh.com
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-2xl font-bold text-primary mb-4">BASRENG LEUKOH</h3>
+            <p class="text-gray-300 mb-4">
+              Basreng renyah dengan cita rasa pedas yang bikin nagih. Diproduksi
+              dengan bahan berkualitas tinggi sejak 2015.
+            </p>
+            <div class="flex space-x-4">
+              <button
+                onclick="orderWhatsApp()"
+                class="text-gray-400 hover:text-white transition-colors"
+              >
+                <i class="fab fa-whatsapp text-xl"></i>
+              </button>
+              <a
+                href="https://www.instagram.com/basrengluekoh_bykingabdi"
+                class="text-gray-400 hover:text-white transition-colors"
+              >
+                <i class="fab fa-instagram text-xl"></i>
+              </a>
+              <a
+                href="https://www.tiktok.com/@basrengluekoh_kingabdi"
+                class="text-gray-400 hover:text-white transition-colors"
+              >
+                <i class="fab fa-tiktok text-xl"></i>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Menu</h4>
+            <ul class="space-y-2 text-gray-300">
+              <li>
+                <a href="#home" class="hover:text-white transition-colors"
+                  >Beranda</a
+                >
+              </li>
+              <li>
+                <a href="#location" class="hover:text-white transition-colors"
+                  >Lokasi</a
+                >
+              </li>
+              <li>
+                <a href="#about" class="hover:text-white transition-colors"
+                  >Tentang</a
+                >
+              </li>
+              <li>
+                <a href="#franchise" class="hover:text-white transition-colors"
+                  >Franchise</a
+                >
+              </li>
+              <li>
+                <a href="#gallery" class="hover:text-white transition-colors"
+                  >Galeri</a
+                >
+              </li>
+              <li>
+                <a href="#contact" class="hover:text-white transition-colors"
+                  >Kontak</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Produk</h4>
+            <ul class="space-y-2 text-gray-300">
+              <li>Basreng Original</li>
+              <li>Basreng Pedas</li>
+              <li>Basreng Extra Hot</li>
+              <li>Paket Hemat</li>
+              <li>Paket Reseller</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Kontak</h4>
+            <ul class="space-y-2 text-gray-300">
+              <li class="flex items-center">
+                <i class="fas fa-map-marker-alt mr-2"></i>
+                Jl. Raya Singosari No. 123, Malang
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-phone mr-2"></i>
+                +62 812-3456-7890
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-envelope mr-2"></i>
+                info@basrengleukoh.com
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-clock mr-2"></i>
+                08.00 - 22.00 WIB
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400"
+        >
+          <p>&copy; 2025 Basreng Leukoh. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="floating-btn">
+      <button
+        onclick="orderWhatsApp()"
+        class="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl"
+      >
+        <i class="fab fa-whatsapp text-2xl"></i>
+      </button>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+      // Dark mode toggle
+      const darkModeToggle = document.getElementById("darkModeToggle");
+      const htmlElement = document.documentElement;
+
+      // Check for saved theme preference
+      const currentTheme = localStorage.getItem("theme") || "light";
+      htmlElement.classList.toggle("dark", currentTheme === "dark");
+
+      darkModeToggle.addEventListener("click", () => {
+        htmlElement.classList.toggle("dark");
+        const newTheme = htmlElement.classList.contains("dark")
+          ? "dark"
+          : "light";
+        localStorage.setItem("theme", newTheme);
+      });
+
+      // Mobile menu toggle
+      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Navbar scroll effect
+      window.addEventListener("scroll", () => {
+        const navbar = document.getElementById("navbar");
+        if (window.scrollY > 100) {
+          navbar.classList.add("shadow-lg");
+        } else {
+          navbar.classList.remove("shadow-lg");
+        }
+      });
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((patokan) => {
+        patokan.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+            // Close mobile menu if open
+            mobileMenu.classList.add("hidden");
+          }
+        });
+      });
+
+      // Testimonial slider
+      let currentTestimonial = 0;
+      const totalTestimonials = 3;
+
+      function nextTestimonial() {
+        currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
+        updateTestimonialSlider();
+      }
+
+      function prevTestimonial() {
+        currentTestimonial =
+          (currentTestimonial - 1 + totalTestimonials) % totalTestimonials;
+        updateTestimonialSlider();
+      }
+
+      function goToTestimonial(index) {
+        currentTestimonial = index;
+        updateTestimonialSlider();
+      }
+
+      function updateTestimonialSlider() {
+        const track = document.getElementById("testimonialTrack");
+        track.style.transform = `translateX(-${currentTestimonial * 100}%)`;
+
+        // Update dots
+        document.querySelectorAll(".testimonial-dot").forEach((dot, index) => {
+          dot.classList.toggle("bg-primary", index === currentTestimonial);
+          dot.classList.toggle("bg-gray-300", index !== currentTestimonial);
+        });
+      }
+
+      // Auto-play testimonial slider
+      setInterval(nextTestimonial, 5000);
+
+      // FAQ toggle
+      function toggleFAQ(index) {
+        const faqItems = document.querySelectorAll(".faq-item");
+        const content = faqItems[index].querySelector(".faq-content");
+        const icon = faqItems[index].querySelector(".faq-icon");
+
+        content.classList.toggle("hidden");
+        icon.classList.toggle("rotate-180");
+      }
+
+      // WhatsApp functions
+      function orderWhatsApp() {
+        const message = encodeURIComponent(
+          "Halo! Saya tertarik untuk memesan Basreng Leukoh. Bisa info lebih lanjut?"
+        );
+        window.open(`https://wa.me/6281234567890?text=${message}`, "_blank");
+      }
+
+      function orderProduct(productName, price) {
+        const message = encodeURIComponent(
+          `Halo! Saya ingin memesan ${productName} seharga Rp ${price.toLocaleString()}. Mohon info lebih lanjut ya!`
+        );
+        window.open(`https://wa.me/6281234567890?text=${message}`, "_blank");
+      }
+
+      function franchiseInquiry(packageName) {
+        const message = encodeURIComponent(
+          `Halo! Saya tertarik dengan paket franchise ${packageName}. Bisa dijelaskan lebih detail?`
+        );
+        window.open(`https://wa.me/6281234567890?text=${message}`, "_blank");
+      }
+
+      // Contact form submission
+      function submitContact(event) {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        const name = formData.get("name");
+        const email = formData.get("email");
+        const message = formData.get("message");
+
+        const whatsappMessage = encodeURIComponent(
+          `Halo! Saya ${name} (${email}) ingin mengirim pesan: ${message}`
+        );
+        window.open(
+          `https://wa.me/6281234567890?text=${whatsappMessage}`,
+          "_blank"
+        );
+
+        // Reset form
+        event.target.reset();
+
+        // Show success message
+        alert("Terima kasih! Pesan Anda akan diteruskan ke WhatsApp.");
+      }
+
+      // Intersection Observer for animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }
+        });
+      }, observerOptions);
+
+      // Initialize animations
+      document.addEventListener("DOMContentLoaded", () => {
+        // Animate cards on scroll
+        document.querySelectorAll(".card-hover").forEach((card) => {
+          card.style.opacity = "0";
+          card.style.transform = "translateY(30px)";
+          card.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+          observer.observe(card);
+        });
+
+        // Animate gallery items
+        document.querySelectorAll(".gallery-item").forEach((item, index) => {
+          item.style.opacity = "0";
+          item.style.transform = "translateY(30px)";
+          item.style.transition = `opacity 0.6s ease ${
+            index * 0.1
+          }s, transform 0.6s ease ${index * 0.1}s`;
+          observer.observe(item);
+        });
+
+        // Initialize testimonial slider
+        updateTestimonialSlider();
+      });
+
+      // Add loading animation
+      window.addEventListener("load", () => {
+        document.body.style.opacity = "1";
+        document.body.style.transition = "opacity 0.5s ease";
+      });
+
+      // Scroll to top functionality
+      window.addEventListener("scroll", () => {
+        const scrollToTop = document.getElementById("scrollToTop");
+        if (scrollToTop) {
+          if (window.pageYOffset > 300) {
+            scrollToTop.style.display = "block";
+          } else {
+            scrollToTop.style.display = "none";
+          }
+        }
+      });
+
+      // Add scroll to top button
+      document.addEventListener("DOMContentLoaded", () => {
+        const scrollToTopBtn = document.createElement("button");
+        scrollToTopBtn.id = "scrollToTop";
+        scrollToTopBtn.innerHTML = '<i class="fas fa-chevron-up"></i>';
+        scrollToTopBtn.className =
+          "fixed bottom-20 left-6 bg-primary hover:bg-red-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 z-50";
+        scrollToTopBtn.style.display = "none";
+
+        scrollToTopBtn.addEventListener("click", () => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        });
+
+        document.body.appendChild(scrollToTopBtn);
+      });
+
+      // Add typing effect to hero tagline
+      function typeWriter(element, text, speed = 100) {
+        let i = 0;
+        element.innerHTML = "";
+
+        function type() {
+          if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+          }
+        }
+        type();
+      }
+
+      // Initialize typing effect when page loads
+      document.addEventListener("DOMContentLoaded", () => {
+        const tagline = document.querySelector("section#home p");
+        if (tagline) {
+          const originalText = tagline.textContent;
+          setTimeout(() => {
+            typeWriter(tagline, originalText, 50);
+          }, 1000);
+        }
+      });
+
+      // Add parallax effect to hero section
+      window.addEventListener("scroll", () => {
+        const scrolled = window.pageYOffset;
+        const parallax = document.querySelector("#home");
+        const speed = scrolled * 0.5;
+
+        // if (parallax) {
+        //   parallax.style.transform = `translateY(${speed}px)`;
+        // }
+      });
+
+      // Add hover effect to navigation links
+      document.querySelectorAll(".nav-link").forEach((link) => {
+        link.addEventListener("mouseenter", function () {
+          this.style.transform = "translateY(-2px)";
+        });
+
+        link.addEventListener("mouseleave", function () {
+          this.style.transform = "translateY(0)";
+        });
+      });
+
+      // Add click ripple effect to buttons
+      document.querySelectorAll("button").forEach((button) => {
+        button.addEventListener("click", function (e) {
+          const ripple = document.createElement("span");
+          const rect = this.getBoundingClientRect();
+          const size = Math.max(rect.width, rect.height);
+          const x = e.clientX - rect.left - size / 2;
+          const y = e.clientY - rect.top - size / 2;
+
+          ripple.style.width = ripple.style.height = size + "px";
+          ripple.style.left = x + "px";
+          ripple.style.top = y + "px";
+          ripple.classList.add("ripple");
+
+          this.appendChild(ripple);
+
+          setTimeout(() => {
+            ripple.remove();
+          }, 600);
+        });
+      });
+
+      // Add CSS for ripple effect
+      const style = document.createElement("style");
+      style.textContent = `
+            button {
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .ripple {
+                position: absolute;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.6);
+                transform: scale(0);
+                animation: ripple 0.6s linear;
+                pointer-events: none;
+            }
+            
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+            
+            body {
+                opacity: 0;
+            }
+        `;
+      document.head.appendChild(style);
+    </script>
+
+    <script>
+      // Data outlet dari file yang diberikan
+      const outletData = [
+        // PUSAT - Malang
+        {
+          nama: "Basreng Leukoh",
+          wilayah: "Malang",
+          outlet: "Wilis",
+          alamat: "Jalan Wilis No. 3",
+          kelurahan: "Gading Kasri",
+          kecamatan: "Klojen",
+          patokan: "Halaman Giri Palma",
+          gmaps: "Basreng Luekoh by King Abdi, Wilis",
+          type: "PUSAT",
+        },
+        {
+          gmaps: "Basreng Luekoh by King Abdi Nusakambangan",
+          nama: "Basreng Leukoh",
+          wilayah: "Malang",
+          outlet: "Sulawesi",
+          alamat: "Jalan Sulawesi",
+          kelurahan: "Kasin",
+          kecamatan: "Klojen",
+          patokan: "Halaman Indomaret Sulawesi",
+          type: "PUSAT",
+        },
+        {
+          gmaps: "Basreng Luekoh By King Abdi (Outlet Mergan)",
+          nama: "Basreng Leukoh",
+          wilayah: "Malang",
+          outlet: "Mergan",
+          alamat: "Jalan Larwo No. E-27",
+          kelurahan: "Sukun",
+          kecamatan: "Sukun",
+          patokan: "Halaman Indomaret Mergan",
+          type: "PUSAT",
+        },
+        {
+          gmaps: "Basreng Luekoh by King Abdi, Mbetek",
+          nama: "Basreng Leukoh",
+          wilayah: "Malang",
+          outlet: "Mbetek",
+          alamat: "Jalan Mayjend Panjaitan No. 56",
+          kelurahan: "Penanggungan",
+          kecamatan: "Klojen",
+          patokan: "Halaman Indomaret Panjaitan",
+          type: "PUSAT",
+        },
+        {
+          gmaps: "Basreng Luekoh by King Abdi (Outlet Ikan Kakap)",
+          nama: "Basreng Leukoh",
+          wilayah: "Malang",
+          outlet: "Ikan Kakap",
+          alamat: "Jalan Ikan Kakap",
+          kelurahan: "Tunjungsekar",
+          kecamatan: "Lowokwaru",
+          patokan: "Halaman Indomaret Ikan Kakap",
+          type: "PUSAT",
+        },
+        {
+          gmaps: "Basreng Luekoh by King Abdi (Outlet Tlogomas)",
+          nama: "Basreng Leukoh",
+          wilayah: "Malang",
+          outlet: "Tlogomas",
+          alamat: "Jalan Tlogomas No. 54b",
+          kelurahan: "Tlogomas",
+          kecamatan: "Lowokwaru",
+          patokan: "Halaman Indomaret Tlogomas Barat",
+          type: "PUSAT",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Malang",
+          outlet: "Klojen",
+          alamat: "Jalan Trunojoyo",
+          kelurahan: "Klojen",
+          kecamatan: "Klojen",
+          patokan: "Depan Grosir Buah",
+          type: "PUSAT",
+        },
+        {
+          gmaps: "Basreng Luekoh by King Abdi (Outlet Sulfat)",
+          nama: "Basreng Leukoh",
+          wilayah: "Malang",
+          outlet: "Sulfat",
+          alamat: "Jalan Sulfat No. 90b",
+          kelurahan: "Purwantoro",
+          kecamatan: "Blimbing",
+          patokan: "Sebelah Puskesmas Kendalkerep",
+          type: "PUSAT",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Malang",
+          outlet: "Sudimoro",
+          alamat: "Jalan Ikan Tombro Timur",
+          kelurahan: "Tunjungsekar",
+          kecamatan: "Lowokwaru",
+          patokan: "Depan Bakso Bang Disko Pusat",
+          type: "PUSAT",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Malang",
+          outlet: "Sawojajar",
+          alamat: "Jalan Danau Bratan Raya",
+          kelurahan: "Sawojajar",
+          kecamatan: "Kedungkandang",
+          patokan: "Depan Masjid Manarul Sawojajar",
+          type: "PUSAT",
+        },
+
+        // MITRA - Malang
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Malang",
+          outlet: "Bumiayu",
+          alamat: "Jalan Lembayung",
+          kelurahan: "Bumiayu",
+          kecamatan: "Kedungkandang",
+          patokan: "Depan Margasip",
+          type: "MITRA",
+          pic: "Angga",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Malang",
+          outlet: "Buring",
+          alamat: "Jalan KH. Malik Dalam No. Ruko2",
+          kelurahan: "Buring",
+          kecamatan: "Kedungkandang",
+          patokan: "Samping Alfamart Malik Dalam",
+          type: "MITRA",
+          pic: "Angga",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Malang",
+          outlet: "Singosari",
+          alamat: "Jalan Raya Tumapel",
+          kelurahan: "Pagentan",
+          kecamatan: "Singosari",
+          patokan: "Depan Kantor Kecamatan Singosari",
+          type: "MITRA",
+          pic: "Tutut",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Malang",
+          outlet: "Ngantang",
+          alamat: "Jalan Raya Ngantang",
+          kelurahan: "Sumberagung",
+          kecamatan: "Ngantang",
+          patokan: "Samping Indomaret Ngantang",
+          type: "MITRA",
+          pic: "Salwa",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Malang",
+          outlet: "Pujon",
+          alamat: "Jalan Abdul Manan Wijaya",
+          kelurahan: "Pujon Lor",
+          kecamatan: "Pujon",
+          patokan: "Sebelah Koperasi Al Hikmah Pujon",
+          type: "MITRA",
+          pic: "Salwa",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Malang",
+          outlet: "Bululawang",
+          alamat: "Jalan Suropati Raya",
+          kelurahan: "Bululawang",
+          kecamatan: "Bululawang",
+          patokan: "Timur Pasar Bululawang, depan Fia Salon",
+          type: "MITRA",
+          pic: "Angga",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Malang",
+          outlet: "Arjowinangun",
+          alamat: "Jalan Raya Arjowinangun",
+          kelurahan: "Arjowinangun",
+          kecamatan: "Kedungkandang",
+          patokan: "Dekat SPBU Arjowinangun, Geprek Sa'i",
+          type: "MITRA",
+          pic: "Angga",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Malang",
+          outlet: "Kepanjen 1",
+          alamat: "Jalan Sukoraharjo No. 1",
+          kelurahan: "Sukoraharjo",
+          kecamatan: "Kepanjen",
+          patokan: "Klinik Jaya Kusuma Husada",
+          type: "MITRA",
+          pic: "Berta",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Malang",
+          outlet: "Kepanjen 2",
+          alamat: "Jalan Sumedang No. 11",
+          kelurahan: "Cokoleo",
+          kecamatan: "Kepanjen",
+          patokan: "",
+          type: "MITRA",
+          pic: "Berta",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Malang",
+          outlet: "Kasembon",
+          alamat: "Jalan Raya Kasembon",
+          kelurahan: "Sanggrahan Kidul",
+          kecamatan: "Kasembon",
+          patokan: "Depan SPBU Kasembon",
+          type: "MITRA",
+          pic: "Salwa",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Malang",
+          outlet: "Turen",
+          alamat: "Jalan Panglima Sudirman",
+          kelurahan: "Turen",
+          kecamatan: "Turen",
+          patokan: "Dekat Gapura Jl. Pegadaian Gang 2",
+          type: "MITRA",
+          pic: "Angga",
+        },
+
+        // Pasuruan
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Pasuruan",
+          outlet: "GOR Kota",
+          alamat: "Jalan Sultan Agung",
+          kelurahan: "Pututrejo",
+          kecamatan: "Purworejo",
+          patokan: "Foodcourt samping kantor dispora",
+          type: "MITRA",
+          pic: "Sofi",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Pasuruan",
+          outlet: "Pangsud",
+          alamat: "Jalan Panglima Sudirman No. 141",
+          kelurahan: "Kebonagung",
+          kecamatan: "Purworejo",
+          patokan: "Halaman Paperpen Pasuruan",
+          type: "PUSAT",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Pasuruan",
+          outlet: "Kancilmas",
+          alamat: "Jalan Salem",
+          kelurahan: "Bendo Mungal",
+          kecamatan: "Bangil",
+          patokan: "Halaman Alfamidi Salem Bangil",
+          type: "PUSAT",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Pasuruan",
+          outlet: "Rembang",
+          alamat: "Jalan Raya Rembang",
+          kelurahan: "Rembang",
+          kecamatan: "Rembang",
+          patokan: "Depan SDN Rembang 1",
+          type: "MITRA",
+          pic: "Wiwit",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Pasuruan",
+          outlet: "Winongan",
+          alamat: "Jalan Raya Mendalan",
+          kelurahan: "Mendalan",
+          kecamatan: "Winongan",
+          patokan: "Barat SMPN 1 Winongan",
+          type: "MITRA",
+          pic: "Ayik",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Pasuruan",
+          outlet: "Bangil",
+          alamat: "Jalan Durian",
+          kelurahan: "Kiduldalem",
+          kecamatan: "Bangil",
+          patokan: "Selatan Rel Kereta",
+          type: "MITRA",
+          pic: "Ayun",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Pasuruan",
+          outlet: "Gunung gangsir",
+          alamat: "Jalan Bintoro",
+          kelurahan: "Gunung Gangsir",
+          kecamatan: "Beji",
+          patokan: "Selatan Masjid Jami' Gunung Gangsir",
+          type: "PUSAT",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Pasuruan",
+          outlet: "Wonorejo",
+          alamat: "Jalan Raya Wonorejo",
+          kelurahan: "Wonorejo",
+          kecamatan: "Wonorejo",
+          patokan: "Selatan Indomaret Wonorejo, utara SD Pakijangan",
+          type: "MITRA",
+          pic: "Fikri",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Pasuruan",
+          outlet: "Pandaan",
+          alamat: "Jalan Pahlawan Sunaryo",
+          kelurahan: "Jogosari",
+          kecamatan: "Pandaan",
+          patokan: "Depan TehTawa Wringinanom",
+          type: "PUSAT",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Pasuruan",
+          outlet: "Sidogiri",
+          alamat: "Jalan Raya Sidogiri",
+          kelurahan: "Warungdowo",
+          kecamatan: "Kraton",
+          patokan: "",
+          type: "MITRA",
+          pic: "Nana",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Pasuruan",
+          outlet: "Grati",
+          alamat: "Jalan Raya Grati",
+          kelurahan: "Grati Tunon",
+          kecamatan: "Grati",
+          patokan: "Selatan Pasar Grati, Samping Optik +62",
+          type: "MITRA",
+          pic: "Roni",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Pasuruan",
+          outlet: "Ngopak",
+          alamat: "",
+          kelurahan: "",
+          kecamatan: "",
+          patokan: "",
+          type: "MITRA",
+          pic: "Nana",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Pasuruan",
+          outlet: "Ranggeh",
+          alamat: "Jalan Bromo No. 20-21",
+          kelurahan: "Ranggeh",
+          kecamatan: "Gondang Wetan",
+          patokan: "Depan Pasar Ranggeh",
+          type: "MITRA",
+          pic: "Jegeg",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Pasuruan",
+          outlet: "Nguling",
+          alamat: "",
+          kelurahan: "Nguling",
+          kecamatan: "Nguling",
+          patokan: "Dekat Indomaret dan Pasar Nguling",
+          type: "PUSAT",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Pasuruan",
+          outlet: "Prigen",
+          alamat: "Jalan Raya Prigen No. 162",
+          kelurahan: "Prigen",
+          kecamatan: "Prigen",
+          patokan: "",
+          type: "MITRA",
+          pic: "Febri",
+        },
+
+        // Other cities
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Gresik",
+          outlet: "GKB",
+          alamat: "Jalan Jawa No. 86",
+          kelurahan: "Yosowilangun",
+          kecamatan: "Manyar",
+          patokan: "Dekat Taman Bundaran I Love GKB",
+          type: "MITRA",
+          pic: "Dita",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Kota Batu",
+          outlet: "Batu",
+          alamat: "Jalan Agus Salim",
+          kelurahan: "Sisir",
+          kecamatan: "Batu",
+          patokan: "Depan SMPN 1 Batu",
+          type: "MITRA",
+          pic: "Salwa",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Sidoarjo",
+          outlet: "Porong",
+          alamat: "Jalan Bhayangkari Blok 2",
+          kelurahan: "",
+          kecamatan: "",
+          patokan: "Depan Toko Kairos E-bike",
+          type: "MITRA",
+          pic: "Lita",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Sidoarjo",
+          outlet: "Prambon",
+          alamat: "Jalan Bendotretek",
+          kelurahan: "Bendotretek",
+          kecamatan: "Prambon",
+          patokan: "Selatan Pasar Temu",
+          type: "MITRA",
+          pic: "Dea",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Sidoarjo",
+          outlet: "Sumorame",
+          alamat: "Jalan Mutiara Citra Asri",
+          kelurahan: "Sumorame",
+          kecamatan: "Candi",
+          patokan: "Dekat Rel, depan perumahan",
+          type: "MITRA",
+          pic: "Rendi",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Sidoarjo",
+          outlet: "Gading fajar",
+          alamat: "Jalan Raya Tenggulunan",
+          kelurahan: "Tenggulunan Maju",
+          kecamatan: "Candi",
+          patokan: "Depan Indomaret Fresh Tenggulunan",
+          type: "PUSAT",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Sidoarjo",
+          outlet: "Wage",
+          alamat: "Jalan Taruna",
+          kelurahan: "Wage",
+          kecamatan: "Taman",
+          patokan: "Depan Car Wash Corner",
+          type: "MITRA",
+          pic: "Yuni",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Sidoarjo",
+          outlet: "Buduran",
+          alamat:
+            "Cluster Winterland, Natura Residence, Jl. Raya Siwalan Panji",
+          kelurahan: "Siwalan Panji",
+          kecamatan: "Buduran",
+          patokan: "Samping SD Nurul Hikmah Buduran",
+          type: "MITRA",
+          pic: "Amel",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Sidoarjo",
+          outlet: "Tarik",
+          alamat: "Jalan Tarik",
+          kelurahan: "Mergosari",
+          kecamatan: "Tarik",
+          patokan: "",
+          type: "MITRA",
+          pic: "Ayien",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Bali",
+          outlet: "Bali",
+          alamat: "Jalan WR Supratman No. 178",
+          kelurahan: "",
+          kecamatan: "",
+          patokan: "Halaman SamGadget",
+          type: "MITRA",
+          pic: "Sabila",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Banyuwangi",
+          outlet: "Banyuwangi",
+          alamat: "Jalan Kolonen Sugiono",
+          kelurahan: "Tukangkayu",
+          kecamatan: "Banyuwangi",
+          patokan: "Depan Kingking Mart",
+          type: "MITRA",
+          pic: "Rizky",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Surabaya",
+          outlet: "Perak Timur",
+          alamat: "Jalan Jakarta No. 5d",
+          kelurahan: "Perak Timur",
+          kecamatan: "Pabean Cantikan",
+          patokan: "",
+          type: "MITRA",
+          pic: "Putri",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Surabaya",
+          outlet: "Sidotopo",
+          alamat: "Jalan Sidotopo Wetan I Luar Kel No. 53-55",
+          kelurahan: "Sidotopo Wetan",
+          kecamatan: "Kenjeran",
+          patokan: "Halaman Alfamart Sidotopo Wetan",
+          type: "MITRA",
+          pic: "Putri",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Surabaya",
+          outlet: "Karang Menjangan",
+          alamat: "Jalan Karang Menjangan No. 34",
+          kelurahan: "Airlangga",
+          kecamatan: "Gubeng",
+          patokan: "",
+          type: "MITRA",
+          pic: "Nada",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Kediri",
+          outlet: "Kota",
+          alamat: "Jalan Kapten Tendean No. 178",
+          kelurahan: "Ngronggo",
+          kecamatan: "Kota",
+          patokan: "Halaman Alfamidi Piere Tendean",
+          type: "MITRA",
+          pic: "Zahra",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Kediri",
+          outlet: "Mojoroto",
+          alamat: "Jalan Kawi No. 2D",
+          kelurahan: "Mojoroto",
+          kecamatan: "Mojoroto",
+          patokan: "Halaman Alfamart Mojoroto",
+          type: "MITRA",
+          pic: "Zahra",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Kediri",
+          outlet: "Kab. Kediri",
+          alamat: "Jalan Pamenang No. 17b",
+          kelurahan: "Sukorejo",
+          kecamatan: "Ngasem",
+          patokan: "",
+          type: "MITRA",
+          pic: "Reddyta",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Kediri",
+          outlet: "Kandangan",
+          alamat: "Jalan Jombang No. 779",
+          kelurahan: "Kandangan",
+          kecamatan: "Kandangan",
+          patokan: "",
+          type: "MITRA",
+          pic: "Salwa",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Kediri",
+          outlet: "Pare",
+          alamat: "Jalan Brawijaya No. 78",
+          kelurahan: "Tulungrejo",
+          kecamatan: "Pare",
+          patokan: "",
+          type: "MITRA",
+          pic: "Salwa",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Lamongan",
+          outlet: "Kota",
+          alamat: "Jalan Lamongrejo",
+          kelurahan: "Jetis",
+          kecamatan: "Lamongan",
+          patokan:
+            "Di Cafe Orens sebelah kantor pos, seberang Alun-Alun Lamongan",
+          type: "MITRA",
+          pic: "Reta",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Mojokerto",
+          outlet: "Mojokerto",
+          alamat: "Jalan Wijaya Kusuma",
+          kelurahan: "Banjaragung",
+          kecamatan: "Puri",
+          patokan: "",
+          type: "PUSAT",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Mojokerto",
+          outlet: "Mojosari",
+          alamat: "Dusun Gelang, Desa Mojosulur",
+          kelurahan: "Mojosulur",
+          kecamatan: "Mojosari",
+          patokan: "Timur Lapangan Mojosulur",
+          type: "MITRA",
+          pic: "Widya",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Tulungagung",
+          outlet: "Tulungagung",
+          alamat: "Jalan Major Sujadi No. 27",
+          kelurahan: "Plosokandang",
+          kecamatan: "Kedungwaru",
+          patokan: "",
+          type: "MITRA",
+          pic: "Nanang",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Bojonegoro",
+          outlet: "Bojonegoro",
+          alamat: "Jalan Panglima Polim",
+          kelurahan: "Sumbang",
+          kecamatan: "Bojonegoro",
+          patokan: "Depan IKIP PGRI Bojonegoro",
+          type: "MITRA",
+          pic: "Nurur",
+        },
+        {
+          gmaps: "",
+          nama: "Basreng Leukoh",
+          wilayah: "Blitar",
+          outlet: "Blitar",
+          alamat: "Jalan Raya Pandean No. 27",
+          kelurahan: "Tangkil",
+          kecamatan: "Wlingi",
+          patokan: "",
+          type: "MITRA",
+          pic: "Bondan",
+        },
+      ];
+
+      // Get unique wilayah
+      const wilayahList = [
+        ...new Set(outletData.map((item) => item.wilayah)),
+      ].sort();
+
+      let selectedWilayah = null;
+      let selectedOutlet = null;
+
+      // Initialize dropdowns
+      function initializeDropdowns() {
+        populateWilayahDropdown();
+        setupEventListeners();
+      }
+
+      function populateWilayahDropdown() {
+        const wilayahListElement = document.getElementById("wilayahList");
+        wilayahListElement.innerHTML = "";
+
+        wilayahList.forEach((wilayah) => {
+          const option = document.createElement("div");
+          option.className =
+            "px-4 py-2 dark:hover:bg-gray-600 hover:bg-blue-50 cursor-pointer transition-colors duration-150";
+          option.textContent = wilayah;
+          option.onclick = () => selectWilayah(wilayah);
+          wilayahListElement.appendChild(option);
+        });
+      }
+
+      function selectWilayah(wilayah) {
+        selectedWilayah = wilayah;
+        selectedOutlet = null;
+
+        document.getElementById("wilayahText").textContent = wilayah;
+        document.getElementById("wilayahList").classList.add("hidden");
+        document
+          .getElementById("wilayahChevron")
+          .classList.remove("dropdown-open");
+
+        // Enable outlet dropdown
+        const outletDropdown = document.getElementById("outletDropdown");
+        outletDropdown.disabled = false;
+        outletDropdown.classList.remove("bg-gray-400", "cursor-not-allowed");
+        outletDropdown.classList.add(
+          "bg-white",
+          "cursor-pointer",
+          "hover:border-gray-400"
+        );
+
+        document.getElementById("outletText").textContent = "Pilih Outlet...";
+        document.getElementById("outletText").classList.remove("text-gray-400");
+        document
+          .getElementById("outletText")
+          .classList.add("text-gray-500", "dark:text-gray-200");
+
+        populateOutletDropdown(wilayah);
+        hideOutletInfo();
+        hideMap();
+      }
+
+      function populateOutletDropdown(wilayah) {
+        const outletListElement = document.getElementById("outletList");
+        outletListElement.innerHTML = "";
+
+        const outlets = outletData.filter((item) => item.wilayah === wilayah);
+
+        outlets.forEach((outlet) => {
+          const option = document.createElement("div");
+          option.className =
+            "px-4 py-3 dark:hover:bg-gray-600 hover:bg-blue-50 cursor-pointer transition-colors duration-150 border-b border-gray-100 last:border-b-0";
+
+          const outletInfo = document.createElement("div");
+          outletInfo.innerHTML = `
+                    <div class="font-medium text-gray-800 dark:text-white">${
+                      outlet.outlet
+                    }</div>
+                    <div class="text-sm text-gray-500 dark:text-gray-300 mt-1">${
+                      outlet.alamat
+                    }</div>
+                    <div class="text-xs text-blue-600 mt-1">${outlet.type}${
+            outlet.pic ? " • PIC: " + outlet.pic : ""
+          }</div>
+                `;
+          option.appendChild(outletInfo);
+          option.onclick = () => selectOutlet(outlet);
+          outletListElement.appendChild(option);
+        });
+      }
+
+      function selectOutlet(outlet) {
+        selectedOutlet = outlet;
+
+        document.getElementById("outletText").innerHTML = `
+                <div class="font-medium">${outlet.outlet}</div>
+                <div class="text-sm text-gray-500">${outlet.alamat}</div>
+            `;
+        document.getElementById("outletList").classList.add("hidden");
+
+        showOutletInfo(outlet);
+        showMap(outlet);
+      }
+
+      function showOutletInfo(outlet) {
+        const outletInfo = document.getElementById("outletInfo");
+        const outletDetails = document.getElementById("outletDetails");
+
+        outletDetails.innerHTML = `
+                <div class="flex items-start mb-2">
+                    <span class="font-medium text-gray-700 dark:text-gray-200 min-w-0 flex-shrink-0">Nama Outlet:</span>
+                    <span class="ml-2">${outlet.outlet}</span>
+                </div>
+                <div class="flex items-start mb-2">
+                    <span class="font-medium text-gray-700 dark:text-gray-200 min-w-0 flex-shrink-0">Alamat:</span>
+                    <span class="ml-2">${
+                      outlet.alamat || "Tidak tersedia"
+                    }</span>
+                </div>
+                <div class="flex items-start mb-2">
+                    <span class="font-medium text-gray-700 dark:text-gray-200 min-w-0 flex-shrink-0">Kelurahan:</span>
+                    <span class="ml-2">${
+                      outlet.kelurahan || "Tidak tersedia"
+                    }</span>
+                </div>
+                <div class="flex items-start mb-2">
+                    <span class="font-medium text-gray-700 dark:text-gray-200 min-w-0 flex-shrink-0">Kecamatan:</span>
+                    <span class="ml-2">${
+                      outlet.kecamatan || "Tidak tersedia"
+                    }</span>
+                </div>
+                ${
+                  outlet.patokan
+                    ? `
+                <div class="flex items-start mb-2">
+                    <span class="font-medium text-gray-700 dark:text-gray-200 min-w-0 flex-shrink-0">Patokan:</span>
+                    <span class="ml-2">${outlet.patokan}</span>
+                </div>
+            `
+                    : ""
+                }`;
+
+        outletInfo.classList.remove("hidden");
+        outletInfo.classList.add("fade-in");
+      }
+
+      function hideOutletInfo() {
+        const outletInfo = document.getElementById("outletInfo");
+        outletInfo.classList.add("hidden");
+        outletInfo.classList.remove("fade-in");
+      }
+
+      function showMap(outlet) {
+        const mapContainer = document.getElementById("mapContainer");
+
+        // Create search query for Google Maps
+        const searchQuery = encodeURIComponent(
+          `${outlet.nama},${outlet.alamat}, ${outlet.kelurahan}, ${outlet.kecamatan}, ${outlet.wilayah}, ${outlet.patokan}`
+        );
+        //         let searchQuery = "";
+        // if (outlet.nama && outlet.nama.trim() !== "") {
+        //     searchQuery = `${outlet.nama}, ${outlet.wilayah}`;
+        // } else if (outlet.patokan && outlet.patokan.trim() !== "") {
+        //     searchQuery = `${outlet.patokan}, ${outlet.wilayah}`;
+        // } else {
+        //     searchQuery = `${outlet.alamat}, ${outlet.kelurahan}, ${outlet.kecamatan}, ${outlet.wilayah}`;
+        // }
+        mapContainer.innerHTML = `
+                <iframe 
+                    src="https://www.google.com/maps/embed/v1/search?key=YOUR_API_KEY&q=${searchQuery}"
+                    width="100%" 
+                    height="100%" 
+                    style="border:0; border-radius: 8px;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    class="fade-in">
+                </iframe>
+            `;
+
+        // Alternative: Using Google Maps search URL (works without API key but shows Google Maps interface)
+        mapContainer.innerHTML = `
+                <div class="w-full h-full rounded-lg overflow-hidden fade-in">
+                    <iframe 
+                        src="https://www.google.com/maps?q=${searchQuery}&output=embed"
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            `;
+      }
+
+      function hideMap() {
+        const mapContainer = document.getElementById("mapContainer");
+        mapContainer.innerHTML = `
+                <div class="text-center text-gray-500">
+                    <svg class="w-16 h-16 mx-auto mb-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                    <p>Pilih outlet untuk melihat lokasi di peta</p>
+                </div>
+            `;
+      }
+
+      function setupEventListeners() {
+        // Wilayah dropdown
+        document.getElementById("wilayahDropdown").onclick = function () {
+          const list = document.getElementById("wilayahList");
+          const chevron = document.getElementById("wilayahChevron");
+
+          if (list.classList.contains("hidden")) {
+            list.classList.remove("hidden");
+            list.classList.add("fade-in");
+            chevron.classList.add("dropdown-open");
+
+            // Close outlet dropdown if open
+            document.getElementById("outletList").classList.add("hidden");
+          } else {
+            list.classList.add("hidden");
+            chevron.classList.remove("dropdown-open");
+          }
+        };
+
+        // Outlet dropdown
+        document.getElementById("outletDropdown").onclick = function () {
+          if (this.disabled) return;
+
+          const list = document.getElementById("outletList");
+
+          if (list.classList.contains("hidden")) {
+            list.classList.remove("hidden");
+            list.classList.add("fade-in");
+
+            // Close wilayah dropdown if open
+            document.getElementById("wilayahList").classList.add("hidden");
+            document
+              .getElementById("wilayahChevron")
+              .classList.remove("dropdown-open");
+          } else {
+            list.classList.add("hidden");
+          }
+        };
+
+        // Close dropdowns when clicking outside
+        document.addEventListener("click", function (event) {
+          const wilayahDropdown = document.getElementById("wilayahDropdown");
+          const wilayahList = document.getElementById("wilayahList");
+          const outletDropdown = document.getElementById("outletDropdown");
+          const outletList = document.getElementById("outletList");
+
+          if (
+            !wilayahDropdown.contains(event.target) &&
+            !wilayahList.contains(event.target)
+          ) {
+            wilayahList.classList.add("hidden");
+            document
+              .getElementById("wilayahChevron")
+              .classList.remove("dropdown-open");
+          }
+
+          if (
+            !outletDropdown.contains(event.target) &&
+            !outletList.contains(event.target)
+          ) {
+            outletList.classList.add("hidden");
+          }
+        });
+      }
+
+      // Initialize when page loads
+      document.addEventListener("DOMContentLoaded", initializeDropdowns);
+    </script>
+  </body>
+</html>
